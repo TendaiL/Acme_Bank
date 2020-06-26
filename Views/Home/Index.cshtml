@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row push-down">
+    <div class="col-md-12 grid-margin">
+        <div id="attachment">
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="Withdraw" tabindex="-1" role="dialog" data-mode="new">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div>
+                <div class="row push-down col-12">
+                    <div class="col-4">
+                        <div><strong>Ammount :</strong></div>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" id="withdrawal" name="withdrawal" autocomplete="off"/>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn ui-button" id="withdrawmoney" onclick="withdrawal(event)">Withdraw</button>
+                    </div>                   
+                </div>
+            </div>
+            <div id="withdraw" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn ui-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Helper.js"></script>
+
+<script>
+    var listTemplate;
+    var ListData = [];
+
+    $(document).ready(function () {
+        //Handlebars---Helper
+        Handlebars.registerHelper('Equals', function (arg1, arg2, options) {
+            return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+        });
+    });
+
+</script>

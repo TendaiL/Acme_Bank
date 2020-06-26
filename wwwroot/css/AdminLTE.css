@@ -1,0 +1,43 @@
+﻿
+.content-wrapper {
+    min-height: 700px !important;
+}
+
+.sidebar-blue {
+    background: rgb(208, 2, 27)
+}
+
+.nav-pills .nav-link {
+    color: white !important;
+}
+
+a .brand-text {
+    color: white !important;
+}
+
+.push-down {
+    margin-top: 9px;
+}
+
+.breadcrumb {
+    background-image: url('../images/absa.png');
+}
+
+
+.pageBlock {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    border: 1px solid #BBB;
+    padding: 5px;
+    display: inline-block;
+}
+
+.clickable {
+    cursor: pointer !important;
+}
+
+
+.clickable-hover:hover {
+    background-color: #eee !important;
+}

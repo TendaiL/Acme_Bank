@@ -1,0 +1,132 @@
+﻿<!--tmpListOfattach-->
+    <script id="tmptranslist" type="text/html">
+        <div class="row">
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                       <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item" style="font-weight:bolder">ACME BANK</li>
+                        </ol>
+                    </nav>
+                        <div class="row push-down">
+                            <div class="col-12 table-responsive-md">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Account Number</th>
+                                            <th>Account Type</th>
+                                            <th>Balance</th>
+                                            <th class="text-warning">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each data.array}}
+                                        <tr class="selectable" style="cursor: pointer">
+                                            <td>
+                                                {{account_number}}
+                                            </td>
+                                            <td>
+                                                {{account_type}}
+                                            </td>
+
+                                            <td>
+                                                {{balance}}
+                                            </td>
+                                            <td>
+                                                <button type="button" id="removebind" onclick="Withdraw({{account_number}})" value="{{account_number}}" class="btn btn-plain btn-primary" {{diactivate account_type balance}}>Withdraw</button>
+                                            </td>
+                                        </tr>
+                                        {{/ each}}
+                                    </tbody>
+                                </table>
+                                <div class="push-down" style="width: 100%;">
+                                    <div class="row push-down">
+                                        <div class="col-3"><strong>Balance :</strong></div>
+                                        <div class="col-3"></div>
+                                        <div class="col-3 noPadding">
+                                            <div class="col-12 noPadding" style="width: 100%; text-align: center">
+                                                {{sum data.array}}
+                                            </div>
+                                        </div>
+                                        <div class="col-3"></div>
+                                    </div>
+                                </div>
+                                <div class="push-down" style="width: 100%; text-align: center">
+                                    {{#if data.paging}}
+                                    {{#each data.paging.pages}}
+                                    <div class="pageBlock {{checkIfPagesIsClickable pageNumber ../paging/activePageNumber}}" onclick="Javascript: {{clickFunction}}({{firstRecordIndex}})">
+                                        {{pageNumber}}
+                                    </div>
+                                    {{/each}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+<!--tmpListOfattach-->
+    <!--<script id="tmptranslist" type="text/html">
+        <div class="row">
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                       <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item" style="font-weight:bolder">ACME BANK</li>
+                        </ol>
+                    </nav>
+                        <div class="row push-down">
+                            <div class="col-12 table-responsive-md">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Account Number</th>
+                                            <th>Account Type</th>
+                                            <th>Balance</th>
+                                            <th class="text-warning">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each data.array}}
+                                        <tr class="selectable" style="cursor: pointer">
+                                            <td>
+                                                {{account_number}}
+                                            </td>
+                                            <td>
+                                                {{account_type}}
+                                            </td>
+
+                                            <td>
+                                                {{balance}}
+                                            </td>
+                                            <td>
+                                                <button type="button" onclick="Withdraw({{account_number}})" value="{{account_number}}" class="btn btn-plain btn-primary {{diactivate account_type balance}}">Withdraw</button>
+                                            </td>
+                                        </tr>
+                                        {{/ each}}
+                                    </tbody>
+                                </table>
+                        
+                                <div class="push-down" style="width: 100%; text-align: center">
+                                    <div class="row push-down">
+                                        {{#if data}}
+                                        <div class="col-4"><strong>Balance :</strong></div>
+                                        <div class="col-8 noPadding">
+                                            <div class="col-12 noPadding">
+                                                {{sum data.array}}
+                                            </div>
+                                        </div>
+                                        {{#if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>-->
